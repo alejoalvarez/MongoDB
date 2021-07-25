@@ -17,3 +17,15 @@
 - Provides easy horizontal scaling
 - The data format of the documents is JSON
 - The data types of the documents are the same as those handled in javascript!
+
+## Importants MongoDB programs
+
+- **mongod** (initialize the database server) "server"
+- **mongo** (connects to the database) "client"
+
+## Concepts MongoDB
+- **Database** 
+- **Collections** (it is the division within the database, it resembles the tables in SQL)
+- **Documents** (they are the records in JSON format that are stored for the collections)
+
+![item1](https://user-images.githubusercontent.com/13514156/126917325-2a122652-5c40-41b1-8ba5-112496413c27.png)
