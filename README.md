@@ -44,7 +44,7 @@
 
 ## Documents commands
 
-**Find documents**
+**Find**
 - ```db.products.find().pretty()``` -> find all documents in the **products** collection (pretty organize the output format)
 - ```db.products.find( { "nameProduct" : "valueToFind" } )``` -> Search for a field
 - ```db.products.find( { "nameProduct" : { $ne : "Keyboard"} } )``` -> Find those that are not equal to a certain value
