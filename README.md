@@ -57,7 +57,7 @@
 
 - ```db.products.insert( {"nameProduct": "Laptop"})``` -> creates a document in the **products** collection, if the collection does not exist mongo creates it
 
-```Note: When a record is stored in mongo, what mogo does is convert that object into BSON format (JSON Binary to optimize the query and other operations on the data)```
+```Note: When a record is stored in mongo, what mongo does is convert that object into BSON format (JSON Binary to optimize the query and other operations on the data)```
 
 - Create multiple documents
 
