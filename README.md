@@ -45,13 +45,28 @@
 ## Documents commands
 
 **Find**
-- ```db.products.find().pretty()``` -> find all documents in the **products** collection (pretty organize the output format)
-- ```db.products.find( { "nameProduct" : "valueToFind" } )``` -> Search for a field
-- ```db.products.find( { "nameProduct" : { $ne : "Keyboard"} } )``` -> Find those that are not equal to a certain value
-- ```db.products.find( { "field1" : "value1" , "field2": "value2"})``` -> Search for two fields
-- ```db.products.find( { "field1" : "value1" }  , { "_id" : 0, "field1": 1 } )``` -> When I need to search only some properties of the document. If I want to exclude any field in the result **"field1": 0** 
-- ```db.products.find( { "field1" : "value1" } ).sort( { field : 1 } ) ``` -> Query and order the result asc
-- - ```db.products.find( { "field1" : "value1" } ).sort( { field : -1 } ) ``` -> Query and order the result desc
+
+- find all documents in the **products** collection (pretty organize the output format)
+
+```db.products.find().pretty()```
+- Search for a field
+
+```db.products.find( { "nameProduct" : "valueToFind" } )``` 
+- Find those that are not equal to a certain value
+
+```db.products.find( { "nameProduct" : { $ne : "Keyboard"} } )```
+- Search for two fields
+
+```db.products.find( { "field1" : "value1" , "field2": "value2"})``` 
+- When I need to search only some properties of the document. If I want to exclude any field in the result **"field1": 0** 
+
+```db.products.find( { "field1" : "value1" }  , { "_id" : 0, "field1": 1 } )``` 
+- Query and order the result asc
+
+```db.products.find( { "field1" : "value1" } ).sort( { field : 1 } ) ```
+- Query and order the result desc
+
+```db.products.find( { "field1" : "value1" } ).sort( { field : -1 } ) ```
 
 **Insert**
 
