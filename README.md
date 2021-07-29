@@ -67,10 +67,19 @@
 - Query and order the result desc
 
 ```db.products.find( { "field1" : "value1" } ).sort( { field : -1 } ) ```
+- Total records
 
-**Insert**
+```db.products.count()```
+- In mongo you can execute functions, for example (bring the registers and go through them 1 by 1):
 
-- ```db.products.insert( {"nameProduct": "Laptop"})``` -> creates a document in the **products** collection, if the collection does not exist mongo creates it
+```db.products.find().forEach(product -> print( "Product Name " + product.name ))```
+
+### **Insert**
+
+- creates a document in the **products** collection, if the collection does not exist mongo creates it
+
+```db.products.insert( {"nameProduct": "Laptop"})```
+
 
 ```Note: When a record is stored in mongo, what mongo does is convert that object into BSON format (JSON Binary to optimize the query and other operations on the data)```
 
@@ -79,4 +88,25 @@
 ```json
 db.products.insert([ { "nameProdct" : "Keyboard", "price": "22"	} , { "nameProduct": "Laptop", "price": "200"	} ] )
 ```
+
+### **Update**
+
+- update a document, replace the entire record
+
+```db.products.update( { "field" : "value" }, { "price" : 99.99 } )```
+- update various document attributes
+
+```db.products.update( { "field" : "value" }, { "price" : 99.99, "name" : "value" } )```
+- **$set** updates an existing field, or if it doesn't exist it creates it
+
+```db.products.update({"name" : "laptop"} , { $set : { "description" : "value" } } )```
+- If it is required to update a record and it has not been created, it can be created as follows
+
+```db.product.update( { "name" : "desktop" } , { $set: { "description" : "gaming desktop" } }, { upset: true } )```
+- If you need to change the name of any property you can use rename
+
+```db.products.update( { "name" : "desktop" } , { $rename : { "name" : "nombre" } } )```
+- If I want to delete a field I can use unset
+
+```db.employee.update ( { "name" : "Alejo"} , { $unset : { edad : 1 } } )```
 
