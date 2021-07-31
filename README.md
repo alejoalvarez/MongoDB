@@ -126,12 +126,45 @@ db.products.insert([ { "nameProdct" : "Keyboard", "price": "22"	} , { "nameProdu
 - If you need to delete everything, the search json is left empty
 ```db.products.remove( { } )```
 
-#### Some operators
+### Some operators
 - **$gt** ```>``` greater than
 - **$gte** ```>=``` greater than equals
 - **$lt** ```<``` less than
 - **$lte** ```<=``` less than equals
 
+### 1 to Many
+- To implement the 1 to many relationship in mongo, arrays are used
+- Occurs when an array can store a document
+
+
+### Arrays
+```js
+var array = [1, 2, 3]
+var user= { "name": "Alejo1"  values : array }
+db.users.insert( user )
+```
+
+- Search if the element exists and if not add it (**$addToSet**)
+
+```db.users.update ( { } ,   $addToSet: { values: 4}  }) ```
+- if required add the value regardless of whether it exists (**$push**)
+
+```db.users.update( { } , { $push: { values: 4 } } )```
+- if you want to enter multiple values
+
+```db.users.update( { } , { $push: { values: { $each : [ 5 , 6] } } } )```
+- if you want to enter multiple values
+
+```db.users.update( { } , { $addToSet: { values: { $each : [ 5, 6] } } } )```
+- insert at a specific position
+
+```db.usuarios.update( { } , { $addToSet: { values: { $each : [ 8, 9] , $position: 4 } } } )```
+- if after inserting you need to order  
+
+```db.usuarios.update( { } , { $addToSet: { values: { $each : [ 10, 11] , $sort:1 } } } ) ```
+- indicate to apply the changes if it finds multiple records
+
+```db.employee.update({ age: { $gte : 28 }} , { $set : { level2: 2 } } , { multi:true } )```
 
 
 
