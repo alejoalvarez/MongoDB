@@ -30,6 +30,14 @@
 
 ![item1](https://user-images.githubusercontent.com/13514156/126917325-2a122652-5c40-41b1-8ba5-112496413c27.png)
 
+## When to use NoSQL
+- My application will have a very fast growth
+- My application will have servers in the cloud
+- I want to mount a database as fast as possible
+- My data will not always have the same structure
+- The information will be very dynamic
+- you will have many users accessing at the same time
+
 ## Database commands
 - ```show dbs``` -> (shows databases)
 - ```db``` -> (shows current database)
@@ -109,4 +117,21 @@ db.products.insert([ { "nameProdct" : "Keyboard", "price": "22"	} , { "nameProdu
 - If I want to delete a field I can use unset
 
 ```db.employee.update ( { "name" : "Alejo"} , { $unset : { edad : 1 } } )```
+
+
+###  **Remove**
+- To delete a record, use remove
+
+```db.products.remove( { "name" : "valor" } ) ```
+- If you need to delete everything, the search json is left empty
+```db.products.remove( { } )```
+
+#### Some operators
+- **$gt** ```>``` greater than
+- **$gte** ```>=``` greater than equals
+- **$lt** ```<``` less than
+- **$lte** ```<=``` less than equals
+
+
+
 
